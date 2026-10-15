@@ -54,7 +54,7 @@ jobs:
           tags: devops-cicd-prod:local
 
       - name: Scan image for HIGH vulnerabilities (log only)
-        uses: aquasecurity/trivy-action@0.29.0
+        uses: aquasecurity/trivy-action@v0.29.0
         with:
           image-ref: devops-cicd-prod:local
           format: table
@@ -63,7 +63,7 @@ jobs:
           ignore-unfixed: true
 
       - name: Scan image for CRITICAL vulnerabilities (gate)
-        uses: aquasecurity/trivy-action@0.29.0
+        uses: aquasecurity/trivy-action@v0.29.0
         with:
           image-ref: devops-cicd-prod:local
           format: table
