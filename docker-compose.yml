@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    image: ${DOCKERHUB_USERNAME:-local}/devops-cicd-prod:${IMAGE_TAG:-latest}
+    container_name: devops_app
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-8080}:3000"
+    environment:
+      NODE_ENV: production
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s

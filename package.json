@@ -1,0 +1,22 @@
+{
+  "name": "devops-cicd-prod",
+  "version": "1.0.0",
+  "description": "Production-style Node.js DevOps demo with zero runtime dependencies",
+  "main": "app/index.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node app/index.js",
+    "test": "node --test app/test.js",
+    "lint": "node --check app/index.js && node --check app/test.js"
+  },
+  "keywords": [
+    "devops",
+    "cicd",
+    "docker",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC"
+}
