@@ -4,7 +4,7 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install --omit=dev
+RUN mkdir -p node_modules && npm install --omit=dev
 
 # Stage 2: Production runtime
 FROM node:22-alpine
